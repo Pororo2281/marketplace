@@ -5,6 +5,7 @@ services:
     container_name: user-redis
     ports:
       - "6379:6379"
+  
   postgres:
     image: postgres:17
     container_name: user-postgres
@@ -14,12 +15,29 @@ services:
       POSTGRES_DB: marketplace_db
     ports:
       - "5432:5432"
+  
   product-postgres:
     image: postgres:17
     container_name: product-postgres
     environment:
       POSTGRES_USER: marketplace_user
       POSTGRES_PASSWORD: javak
-      POSTGRES_DB: product_db
+      POSTGRES_DB: product_db    
     ports:
       - "5433:5432"
+  
+  minio:
+    image: minio/minio:latest
+    container_name: product-minio
+    ports:
+      - "9000:9000"   # API
+      - "9001:9001"   # Web Console
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+
+volumes:
+  minio_data:

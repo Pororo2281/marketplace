@@ -19,10 +19,10 @@ public class ProductImageEntity {
     private String url;
 
     @Column(name = "sort_order")
-    private Integer sortOrder = 0;
+    private Integer sortOrder ;
 
     @Column(name = "is_main")
-    private Boolean isMain = false;
+    private Boolean isMain ;
 
     public ProductImageEntity() {}
 

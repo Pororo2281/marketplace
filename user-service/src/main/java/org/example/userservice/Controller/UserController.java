@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @PutMapping
-    public ResponseEntity<UserResponse> updateProfile(@RequestBody UpdateUserRequest userRequest, @AuthenticationPrincipal(expression = "id") Long userId){
+    public ResponseEntity<UserResponse> updateProfile(@AuthenticationPrincipal(expression = "id") Long userId,@RequestBody UpdateUserRequest userRequest){
         return ResponseEntity.ok(userService.updateBasicProfile(userRequest,userId));
     }
 

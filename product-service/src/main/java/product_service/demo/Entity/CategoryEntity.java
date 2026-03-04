@@ -27,10 +27,10 @@ public class CategoryEntity {
     private String description;
 
     @Column(name = "sort_order")
-    private Integer sortOrder = 0;
+    private Integer sortOrder ;
 
     @Column(name = "is_active")
-    private Boolean isActive = true;
+    private Boolean isActive ;
 
     public CategoryEntity() {}
 
@@ -55,6 +55,6 @@ public class CategoryEntity {
     public Integer getSortOrder() { return sortOrder; }
     public void setSortOrder(Integer sortOrder) { this.sortOrder = sortOrder; }
 
-    public Boolean getIsActive() { return isActive; }
-    public void setIsActive(Boolean isActive) { this.isActive = isActive; }
+    public Boolean isActive() { return isActive; }
+    public void setActive(Boolean isActive) { this.isActive = isActive; }
 }

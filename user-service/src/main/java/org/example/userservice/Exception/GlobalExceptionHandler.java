@@ -10,8 +10,6 @@ import java.time.Instant;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionResponse> handleGenericException(Exception ex){
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ExceptionResponse(

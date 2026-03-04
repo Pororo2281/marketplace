@@ -62,6 +62,7 @@ public class ProductEntity {
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
+
     @PrePersist
     public void prePersist() {
         createdAt = Instant.now();
